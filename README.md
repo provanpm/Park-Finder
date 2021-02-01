@@ -102,4 +102,37 @@ Park names / locations are stated in English.
 
 -	Select the park Eden Park
 
-**Then** I should see general park information including at least one image, an address, a description, limitations, etc. 
+**Then** I should see general park information including at least one image, an address, a description, limitations, etc.
+
+## Class Diagram
+
+![ClassDiagram]()
+
+### Class Diagram Description
+
+**MainActivity:** The first screen the user sees. This will have a list of parks, and an option to search for a different park. 
+
+**ParkDetailsActivity:** A screen that shows details of a park. 
+
+**RetrofitInstance:** Boostrap class required for Retrofit. 
+
+**Park:** Noun class that represents a park. 
+
+**Activities:** Noun class that represents various activities in a park. 
+
+**IParkDAO:** Interface for Retrofit to find and parse Park JSON. 
+
+**IActivitiesDAO:** Interface for Room to persist activity data per park. 
+
+
+## Scrum Roles
+
+- DevOps/Product Owner/Scrum Master: Paul Provan
+- Frontend Developer / Integration Developer: Nicholas Pham-Rider
+
+## Weekly Meeting
+
+Sunday at 7 PM.  Use this Teams:
+
+Meeting Information
+[Office Hours Teams](https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYwYzQ3ZGEtNDkzNS00ZTU4LWEzYWItY2UwNzM3YzZkMzJh%40thread.v2/0?context=%7b%22Tid%22%3a%22f5222e6c-5fc6-48eb-8f03-73db18203b63%22%2c%22Oid%22%3a%225e43e7e5-c6e8-44a8-8867-fdf93cf9d11c%22%7d)
