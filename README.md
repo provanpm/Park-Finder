@@ -67,10 +67,11 @@ Park Name: Burnet Woods
 
 Location: 3251 Brookline Ave, Cincinnati, OH 45220
 
-1.3  
+1.3 
+
 **Given** a feed of park data is available  
 
-**When** I search for “sklujapouetllkjsda;u”  
+**When** I search for “WLIFUHskvuWHGULDS”  
 
 **Then** I should receive zero results (an empty list)  
 
@@ -83,17 +84,22 @@ As a user interested in going to the park, they should be able to select a speci
 
 #### Dependencies
 
-Park search data are available and accessible.  
+Park search data is available and accessible.  
 
-#### Assumptions  
-Scientific names are stated in Latin.  
-Common names are stated in English.  
+#### Assumptions
+
+Desired locations are in the United States 
+
+Park names / locations are stated in English.  
 
 #### Examples  
 
-1.1  
+1.1
+
 **Given** a feed of plant data is available  
+
 **Given** GPS details are available  
+
 **When**  
 
 -	Select the plant Asimina triloba  
