@@ -21,7 +21,7 @@ Use your mobile device as a hub to find all the information you'll need to plan 
 
 ## Storyboard
 
-
+![Storyboard]()
 
 ## Functional Requirements
 
@@ -106,7 +106,7 @@ Park names / locations are stated in English.
 
 ## Class Diagram
 
-![ClassDiagram]()
+![ClassDiagram](https://github.com/phamrina/Park-Finder/blob/main/Class%20Diagram%20(parkfinder).png)
 
 ### Class Diagram Description
 
