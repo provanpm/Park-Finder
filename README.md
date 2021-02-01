@@ -96,21 +96,10 @@ Park names / locations are stated in English.
 
 1.1
 
-**Given** a feed of plant data is available  
-
-**Given** GPS details are available  
+**Given** a feed of park data is available  
 
 **When**  
 
--	Select the plant Asimina triloba  
--	Add notes: “planted by Brandan Jones”  
-**Then**  when I navigate to the Specimen History view, I should see at least one Asimina triloba specimen with the notes, “planted by Brandan Jones”  
+-	Select the park Eden Park
 
-2.1  
-**Given** a feed of plant data is available  
-**Given** GPS details are available  
-**When**   
-
--	Select the plant Malus domestica ‘Fuji’  
--	Take a photo of a Fuji apple seedling  
-**Then** when I navigate to the Specimen History view, I should see at least one Malus domestica ‘Fuji’ specimen with the a photo of a Fuji apple seedling.  
+**Then** I should see general park information including at least one image, an address, a description, limitations, etc. 
