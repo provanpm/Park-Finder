@@ -21,7 +21,7 @@ Use your mobile device as a hub to find all the information you'll need to plan 
 
 ## Storyboard
 
-![Storyboard]()
+![Storyboard](https://github.com/phamrina/Park-Finder/blob/main/phone.PNG)
 
 ## Functional Requirements
 
