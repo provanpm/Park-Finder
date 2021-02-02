@@ -124,6 +124,10 @@ Park names / locations are stated in English.
 
 **IActivitiesDAO:** Interface for Room to persist activity data per park. 
 
+## Product Backlog
+
+- Park Search Functionality
+- Park Favorite Functionality
 
 ## Scrum Roles
 
