@@ -8,6 +8,8 @@ Paul Provan
 
 Nicholas Pham-Rider
 
+Brandon Nguyen
+
 ## Introduction
 
 Looking for something to do outdoors? Not sure if your local green space is pet friendly? Park Finder can help
@@ -132,7 +134,8 @@ Park names / locations are stated in English.
 ## Scrum Roles
 
 - DevOps/Product Owner/Scrum Master: Paul Provan
-- Frontend Developer / Integration Developer: Nicholas Pham-Rider
+- Integration Developer: Nicholas Pham-Rider
+- Frontend Developer: Brandon Nguyen
 
 ## Weekly Meeting
 
