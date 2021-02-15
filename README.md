@@ -10,6 +10,10 @@ Nicholas Pham-Rider
 
 Brandon Nguyen
 
+John Praiser
+
+Guy-Leroc Ossebi
+
 ## Introduction
 
 Looking for something to do outdoors? Not sure if your local green space is pet friendly? Park Finder can help
@@ -135,7 +139,7 @@ Park names / locations are stated in English.
 
 - DevOps/Product Owner/Scrum Master: Paul Provan
 - Integration Developer: Nicholas Pham-Rider, John Praiser
-- Frontend Developer: Brandon Nguyen, Guy Leroc-Ossebi
+- Frontend Developer: Brandon Nguyen, Guy-Leroc Ossebi
 
 ## Weekly Meeting
 
