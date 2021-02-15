@@ -134,8 +134,8 @@ Park names / locations are stated in English.
 ## Scrum Roles
 
 - DevOps/Product Owner/Scrum Master: Paul Provan
-- Integration Developer: Nicholas Pham-Rider
-- Frontend Developer: Brandon Nguyen
+- Integration Developer: Nicholas Pham-Rider, John Praiser
+- Frontend Developer: Brandon Nguyen, Guy Leroc-Ossebi
 
 ## Weekly Meeting
 
