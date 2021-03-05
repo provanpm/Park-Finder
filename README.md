@@ -133,7 +133,7 @@ Park names / locations are stated in English.
 ## Product Backlog
 
 - Park Search Functionality
-- Park Favorite Functionality
+- Park View Functionality
 
 ## Scrum Roles
 
