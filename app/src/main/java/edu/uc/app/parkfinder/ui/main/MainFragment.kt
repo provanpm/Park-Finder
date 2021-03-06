@@ -23,5 +23,6 @@ class MainFragment : Fragment(R.layout.main_fragment) {
         viewModel.parks.observe(viewLifecycleOwner, Observer {
                 parks -> actPark.setAdapter(ArrayAdapter(requireContext(), R.layout.support_simple_spinner_dropdown_item, parks))
         })
+
     }
 }
