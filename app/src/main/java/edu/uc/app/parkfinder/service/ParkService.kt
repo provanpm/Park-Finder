@@ -11,8 +11,9 @@ import retrofit2.Response
 class ParkService {
 
     fun fetchParks() : MutableLiveData<ArrayList<Park>> {
-        var _parks = MutableLiveData<ArrayList<Park>>()
-        val service = RetrofitClientInstance.retrofitInstance?.create(IParkDAO::class.java)
+        val _parks = MutableLiveData<ArrayList<Park>>()
+        val service =
+            RetrofitClientInstance.retrofitInstance?.create(IParkDAO::class.java)
         val call = service?.getAllParks()
 
         call?.enqueue(object: Callback<ArrayList<Park>> {
@@ -31,8 +32,7 @@ class ParkService {
              * Note: An HTTP response may still indicate an application-level failure such as a 404 or 500.
              * Call [Response.isSuccessful] to determine if the response indicates success.
              */
-            override fun onResponse(call: Call<ArrayList<Park>>, response: Response<ArrayList<Park>>
-            ) {
+            override fun onResponse(call: Call<ArrayList<Park>>, response: Response<ArrayList<Park>>) {
                 _parks.value = response.body()
             }
         })
