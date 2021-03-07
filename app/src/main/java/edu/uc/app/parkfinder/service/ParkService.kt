@@ -1,5 +1,6 @@
 package edu.uc.app.parkfinder.service
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import edu.uc.app.parkfinder.RetrofitClientInstance
 import edu.uc.app.parkfinder.dao.IParkDAO
@@ -22,6 +23,7 @@ class ParkService {
              */
             override fun onFailure(call: Call<ArrayList<Park>>, t: Throwable) {
                 // TODO: fill this in
+                Log.d("Park ArrayList Callback", "Something went wrong!", t)
             }
 
             /**
