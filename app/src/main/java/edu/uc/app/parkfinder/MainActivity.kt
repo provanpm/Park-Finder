@@ -2,7 +2,7 @@ package edu.uc.app.parkfinder
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import edu.uc.app.parkfinder.ui.main.MainFragment
+import edu.uc.app.parkfinder.ui.main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
+                    .replace(R.id.home_fragment, HomeFragment.newInstance())
                     .commitNow()
         }
     }
