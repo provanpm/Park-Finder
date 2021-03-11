@@ -11,7 +11,9 @@ import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment(R.layout.main_fragment) {
 
-
+    companion object {
+        fun newInstance() = MainFragment()
+    }
 
     private lateinit var viewModel: MainViewModel
 
@@ -22,8 +24,5 @@ class MainFragment : Fragment(R.layout.main_fragment) {
                 parks -> actPark.setAdapter(ArrayAdapter(requireContext(), R.layout.support_simple_spinner_dropdown_item, parks))
         })
 
-    }
-    companion object {
-        fun newInstance() = MainFragment()
     }
 }

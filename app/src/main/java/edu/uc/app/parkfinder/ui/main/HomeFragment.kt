@@ -9,7 +9,9 @@ import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : Fragment(R.layout.home_fragment) {
 
-
+    companion object {
+        fun newInstance() = HomeFragment()
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -17,8 +19,5 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
             val action = HomeFragmentDirections.actionHomeFragmentToMainFragment()
             findNavController().navigate(action)
         }
-    }
-    companion object {
-        fun newInstance() = HomeFragment()
     }
 }
