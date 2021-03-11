@@ -1,5 +1,6 @@
 package edu.uc.app.parkfinder.service
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import edu.uc.app.parkfinder.RetrofitClientInstance
 import edu.uc.app.parkfinder.dao.IParkDAO
@@ -10,8 +11,8 @@ import retrofit2.Response
 
 class ParkService {
 
-    fun fetchParks() : MutableLiveData<ArrayList<Park>> {
-        var _parks = MutableLiveData<ArrayList<Park>>()
+    internal fun fetchParks() : MutableLiveData<ArrayList<Park>> {
+        var parks = MutableLiveData<ArrayList<Park>>()
         val service = RetrofitClientInstance.retrofitInstance?.create(IParkDAO::class.java)
         val call = service?.getAllParks()
 
@@ -22,6 +23,7 @@ class ParkService {
              */
             override fun onFailure(call: Call<ArrayList<Park>>, t: Throwable) {
                 // TODO: fill this in
+                Log.e( "ArrayList Park", "Error Occurred!", t);
             }
 
             /**
@@ -33,10 +35,10 @@ class ParkService {
              */
             override fun onResponse(call: Call<ArrayList<Park>>, response: Response<ArrayList<Park>>
             ) {
-                _parks.value = response.body()
+                parks.value = response.body()
             }
         })
 
-        return _parks
+        return parks
     }
 }
