@@ -6,24 +6,23 @@ Design Document
 
 Paul Provan
 
-Nicholas Pham-Rider
+John Praiser
 
 Brandon Nguyen
 
-John Praiser
-
 Guy-Leroc Ossebi
+
+Nicholas Pham-Rider
 
 ## Introduction
 
-Looking for something to do outdoors? Not sure if your local green space is pet friendly? Park Finder can help
+Looking for something to do outdoors? Planning a day at your favorite park? Park Finder can help
 
-- Find all public parks within a chosen local area
-- Determine outdoor activities at specific green space locations
-- Congregate information about outdoor locations
-- Display images of public parks before you actually go
+- Cache your local greenspaces and public parks
+- Save images and descriptions of your favorite locations
+- Add notes and more about specific park visits
 
-Use your mobile device as a hub to find all the information you'll need to plan you trip to the park. Location, description, visualization and information are all features someone can utilize making their plans for the day.
+Use your mobile device as a hub for all the information you'll need to plan you trip to the park. Location, description, visualization and general information are all features someone can utilize with this app to make their plans for the day.
 
 ## Storyboard
 
