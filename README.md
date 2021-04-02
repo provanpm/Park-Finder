@@ -6,24 +6,24 @@ Design Document
 
 Paul Provan
 
-Nicholas Pham-Rider
+John Praiser
 
 Brandon Nguyen
 
-John Praiser
-
 Guy-Leroc Ossebi
+
+Nicholas Pham-Rider
 
 ## Introduction
 
-Looking for something to do outdoors? Not sure if your local green space is pet friendly? Park Finder can help
+Looking for something to do outdoors? Planning a day at your favorite park? Park Finder can help
 
-- Find all public parks within a chosen local area
-- Determine outdoor activities at specific green space locations
-- Congregate information about outdoor locations
-- Display images of public parks before you actually go
+- Cache your local greenspaces and public parks
+- Save images and descriptions of your favorite locations
+- Add notes and more about specific park visits
+- Search a database of outdoor spaces
 
-Use your mobile device as a hub to find all the information you'll need to plan you trip to the park. Location, description, visualization and information are all features someone can utilize making their plans for the day.
+Use your mobile device as a hub for all the information you'll need to plan you trip to the park. Location, description, visualization and general information are all features someone can utilize with this app to make their plans for the day.
 
 ## Storyboard
 
@@ -31,21 +31,53 @@ Use your mobile device as a hub to find all the information you'll need to plan 
 
 ## Functional Requirements
 
-### Requirement 100.0: Search for Parks
+### Requirement 100.0: Add Park
 
 #### Scenario
 
-As a user interested in going to the park, they should be able to search parks based on a variety of information: name, information, location  
+As a user interested in a park, they should be able to add a new park with name, image, description and location  
 
 #### Dependencies
 
-Park search data is available and accessible.  
+Camera permissions
+
+Device has internet connection
 
 #### Assumptions
 
-Desired locations are in the United States 
+Device has working camera
 
-Park names / locations are stated in English.  
+#### Examples
+
+1.1  
+
+**Given** a user is adding a new park 
+
+**When**  they click add park  
+
+**Then** it should be verefied they have included name and location
+
+1.2
+
+**Given** a user is adding a new park 
+
+**When** they choose to add image(s)
+
+**Then** the device camera should activate and display capture 
+
+### Requirement 101: Search Park
+
+#### Scenario
+
+As a user interested in going to the park, they should be able to search parks based on a variety of information, such as name or location
+
+#### Dependencies
+
+Device has internet connection
+
+#### Assumptions
+
+Park data in English
 
 #### Examples
 
@@ -79,14 +111,13 @@ Location: 3251 Brookline Ave, Cincinnati, OH 45220
 
 **When** I search for “WLIFUHskvuWHGULDS”  
 
-**Then** I should receive zero results (an empty list)  
+**Then** I should receive zero results (an empty list)
 
-
-### Requirement 101: View Park
+### Requirement 102: View Park
 
 #### Scenario
 
-As a user interested in going to the park, they should be able to select a specific park to view park information: name, images, activities, location, information
+As a user interested in going to the park, they should be able to select a specific park to view park information: name, images, description, location
 
 #### Dependencies
 
@@ -132,6 +163,7 @@ Park names / locations are stated in English.
 
 ## Product Backlog
 
+- Park Add Functionality
 - Park Search Functionality
 - Park View Functionality
 
