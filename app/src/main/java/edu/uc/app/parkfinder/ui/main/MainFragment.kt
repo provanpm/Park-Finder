@@ -25,4 +25,5 @@ class MainFragment : Fragment(R.layout.main_fragment) {
         })
 
     }
+
 }

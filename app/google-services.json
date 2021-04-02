@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "470000195205",
+    "project_id": "park-finder-logger",
+    "storage_bucket": "park-finder-logger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470000195205:android:9cda04e6de2601f9a1bbec",
+        "android_client_info": {
+          "package_name": "edu.uc.app.parkfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470000195205-av0chh0me3kjkgcp87dt3bop3sm0mi73.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABzDIxsqpvnaDtVIVIzVh-PzOlQ9hhaQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470000195205-av0chh0me3kjkgcp87dt3bop3sm0mi73.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
