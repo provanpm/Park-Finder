@@ -1,8 +1,8 @@
-package edu.uc.app.parkfinder
+package edu.uc.app.parkfinder.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import edu.uc.app.parkfinder.ui.main.*
+import edu.uc.app.parkfinder.R
 
 class MainActivity : AppCompatActivity() {
 

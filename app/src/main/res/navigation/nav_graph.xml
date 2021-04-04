@@ -23,5 +23,13 @@
         android:id="@+id/main_fragment"
         android:name="edu.uc.app.parkfinder.ui.main.MainFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_main_fragment_to_searchResultFragment3"
+            app:destination="@id/searchResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="edu.uc.app.parkfinder.ui.main.SearchResultFragment"
+        android:label="SearchResultFragment" />
 </navigation>
