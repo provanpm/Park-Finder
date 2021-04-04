@@ -16,6 +16,5 @@ class MainViewModel : ViewModel() {
     fun fetchParks() {
         parks = parkService.fetchParks()
 
-
     }
 }
