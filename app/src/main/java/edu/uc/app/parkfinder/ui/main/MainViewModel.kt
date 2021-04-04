@@ -13,7 +13,7 @@ class MainViewModel : ViewModel() {
         fetchParks()
     }
 
-    fun fetchParks() {
+    private fun fetchParks() {
         parks = parkService.fetchParks()
 
     }
