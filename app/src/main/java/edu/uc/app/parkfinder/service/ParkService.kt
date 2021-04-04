@@ -11,7 +11,7 @@ import retrofit2.Response
 class ParkService {
 
     fun fetchParks() : MutableLiveData<ArrayList<Park>> {
-        var _parks = MutableLiveData<ArrayList<Park>>()
+        var parks = MutableLiveData<ArrayList<Park>>()
         val service = RetrofitClientInstance.retrofitInstance?.create(IParkDAO::class.java)
         val call = service?.getAllParks()
 
@@ -33,10 +33,10 @@ class ParkService {
              */
             override fun onResponse(call: Call<ArrayList<Park>>, response: Response<ArrayList<Park>>
             ) {
-                _parks.value = response.body()
+                parks.value = response.body()
             }
         })
 
-        return _parks
+        return parks
     }
 }

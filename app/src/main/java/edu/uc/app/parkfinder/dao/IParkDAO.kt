@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface IParkDAO {
 
-    @GET("/core/country-list/data_json/data/8c458f2d15d9f2119654b29ede6e45b8/data_json.json")
+    @GET("data_json.json/")
     fun getAllParks(): Call<ArrayList<Park>>
 }
