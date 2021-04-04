@@ -31,6 +31,7 @@ class MainFragment : Fragment(R.layout.main_fragment) {
 
         searchTextView = getView()?.findViewById(R.id.searchPark) as AutoCompleteTextView
         resultTextView = getView()?.findViewById(R.id.nameTextView) as TextView
+        searchPark.threshold = 1
 
         search_button.setOnClickListener {
             var  searchFor: String = searchTextView.text.toString()
@@ -39,12 +40,10 @@ class MainFragment : Fragment(R.layout.main_fragment) {
             var name = viewModel.parks.value?.get(index = indexInParksArray)?.name
             resultTextView.text = "Name Matched = " + viewModel.parks.value?.get(indexInParksArray)?.name?.trim().toString()
 
-            //TODO() Add Navigation to Search Results Page and pass the searched park with correct data.
+            val action = SearchResultDirections.actionMainFragmentToResultFragment()
+            findNavController().navigate(action)
 
-            // val action = SearchResultDirections.actionMainFragmentToResultFragment()
-            //findNavController().navigate(action)
         }
-        searchPark.threshold = 1
 
     }
     private fun getParkFromList(searchFor: String) :Int{
