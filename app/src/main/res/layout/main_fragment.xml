@@ -8,67 +8,26 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment">
 
-    <!--    <TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--        android:id="@+id/spinnerResult"-->
-<!--        style="?attr/spinnerDropDownItemStyle"-->
-<!--        android:singleLine="true"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="?attr/dropdownListPreferredItemHeight"-->
-<!--        android:ellipsize="marquee"-->
-<!--        tools:ignore="MissingConstraints" />-->
-
     <AutoCompleteTextView
         android:id="@+id/searchPark"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:hint="@string/park"
+        android:hint="Enter Park Name"
         android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/search_button"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSearch"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/scrollViewContainer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="50dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchPark">
-
-        <TextView
-            android:id="@+id/nameTextView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="200dp"
-            android:text="RESULTS"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:typeface="normal"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_conversion_absoluteHeight="19dp"
-            tools:layout_conversion_absoluteWidth="411dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <Button
-        android:id="@+id/search_button"
+        android:id="@+id/buttonSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="52dp"
         android:text="Search"
-        app:layout_constraintBottom_toTopOf="@+id/scrollViewContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/searchPark"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 

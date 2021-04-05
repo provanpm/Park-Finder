@@ -19,17 +19,24 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+
     <fragment
         android:id="@+id/main_fragment"
         android:name="edu.uc.app.parkfinder.ui.main.MainFragment"
         android:label="main_fragment"
         tools:layout="@layout/main_fragment" >
         <action
-            android:id="@+id/action_main_fragment_to_searchResultFragment3"
-            app:destination="@id/searchResultFragment" />
+            android:id="@+id/action_main_fragment_to_search_result_fragment"
+            app:destination="@id/search_result_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+
     <fragment
-        android:id="@+id/searchResultFragment"
+        android:id="@+id/search_result_fragment"
         android:name="edu.uc.app.parkfinder.ui.main.SearchResultFragment"
-        android:label="SearchResultFragment" />
+        android:label="search_result_fragment"
+        tools:layout="@layout/search_result_fragment" />
 </navigation>

@@ -3,33 +3,34 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_result_fragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.main.SearchResultFragment">
 
     <EditText
-        android:id="@+id/parkNameTF"
+        android:id="@+id/parkNameTextField"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Ohio National Park"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/parkDescriptionTF"
+        android:id="@+id/parkDescriptionTextField"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:text="Description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parkNameTF" />
+        app:layout_constraintTop_toBottomOf="@+id/parkNameTextField" />
 
     <TextView
-        android:id="@+id/currentEventTextfield"
+        android:id="@+id/currentEventTextField"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:text="Current Events"
@@ -37,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parkDescriptionTF" />
+        app:layout_constraintTop_toBottomOf="@+id/parkDescriptionTextField" />
 
     <TextView
         android:id="@+id/contactInfoTextField"
@@ -49,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentEventTextfield"
+        app:layout_constraintTop_toBottomOf="@+id/currentEventTextField"
         app:layout_constraintVertical_bias="1.0" />
 
     <HorizontalScrollView
@@ -68,14 +69,14 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/imageView1"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/imageView2"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
                 android:layout_weight="1"
@@ -94,8 +95,6 @@
                 android:layout_height="300dp"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />
-
         </LinearLayout>
     </HorizontalScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
