@@ -8,26 +8,26 @@ import android.widget.*
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import edu.uc.app.parkfinder.R
-import kotlinx.android.synthetic.main.main_fragment.*
+import kotlinx.android.synthetic.main.search_fragment.*
 
-class MainFragment : Fragment(R.layout.main_fragment) {
+class SearchFragment : Fragment(R.layout.search_fragment) {
     private lateinit var viewModel: MainViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         viewModel.parks.observe(viewLifecycleOwner, Observer {
-                parks -> searchPark.setAdapter(ArrayAdapter(requireContext(), R.layout.support_simple_spinner_dropdown_item, parks))
-                searchPark.threshold = 1
+                parks -> searchParkACT.setAdapter(ArrayAdapter(requireContext(), R.layout.support_simple_spinner_dropdown_item, parks))
+                searchParkACT.threshold = 1
         })
         buttonSearch.setOnClickListener {
-            val action = MainFragmentDirections.actionMainFragmentToSearchResultFragment()
+            val action = SearchFragmentDirections.actionSearchFragmentToSearchResultFragment()
             findNavController().navigate(action)
         }
     }
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = SearchFragment()
     }
 
 }

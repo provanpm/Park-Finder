@@ -10,8 +10,13 @@ import kotlinx.android.synthetic.main.home_fragment.*
 class HomeFragment : Fragment(R.layout.home_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        buttonGo.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToMainFragment()
+        searchButton.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
+            findNavController().navigate(action)
+        }
+
+        addButton.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToAddFragment()
             findNavController().navigate(action)
         }
     }

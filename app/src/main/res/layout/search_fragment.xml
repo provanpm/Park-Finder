@@ -3,17 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_fragment"
+    android:id="@+id/add_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainFragment">
+    tools:context=".ui.main.SearchFragment">
 
     <AutoCompleteTextView
-        android:id="@+id/searchPark"
+        android:id="@+id/searchParkACT"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:hint="Enter Park Name"
-        android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/buttonSearch"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,10 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="52dp"
         android:text="Search"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/searchPark"
+        app:layout_constraintStart_toEndOf="@+id/searchParkACT"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

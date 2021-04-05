@@ -12,8 +12,15 @@
         android:label="home_fragment"
         tools:layout="@layout/home_fragment" >
         <action
-            android:id="@+id/action_home_fragment_to_main_fragment"
-            app:destination="@id/main_fragment"
+            android:id="@+id/action_home_fragment_to_search_fragment"
+            app:destination="@id/search_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_fragment_to_add_fragment"
+            app:destination="@id/add_fragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -21,12 +28,12 @@
     </fragment>
 
     <fragment
-        android:id="@+id/main_fragment"
-        android:name="edu.uc.app.parkfinder.ui.main.MainFragment"
+        android:id="@+id/search_fragment"
+        android:name="edu.uc.app.parkfinder.ui.main.SearchFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" >
+        tools:layout="@layout/search_fragment" >
         <action
-            android:id="@+id/action_main_fragment_to_search_result_fragment"
+            android:id="@+id/action_search_fragment_to_search_result_fragment"
             app:destination="@id/search_result_fragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -39,4 +46,10 @@
         android:name="edu.uc.app.parkfinder.ui.main.SearchResultFragment"
         android:label="search_result_fragment"
         tools:layout="@layout/search_result_fragment" />
+
+    <fragment
+        android:id="@+id/add_fragment"
+        android:name="edu.uc.app.parkfinder.ui.main.AddFragment"
+        android:label="add_fragment"
+        tools:layout="@layout/add_fragment" />
 </navigation>
