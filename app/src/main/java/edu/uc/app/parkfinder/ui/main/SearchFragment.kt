@@ -11,6 +11,7 @@ import edu.uc.app.parkfinder.R
 import kotlinx.android.synthetic.main.search_fragment.*
 
 class SearchFragment : Fragment(R.layout.search_fragment) {
+
     private lateinit var viewModel: MainViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

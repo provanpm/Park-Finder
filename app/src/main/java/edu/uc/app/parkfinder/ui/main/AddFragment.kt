@@ -6,6 +6,7 @@ import android.view.View
 import edu.uc.app.parkfinder.R
 
 class AddFragment : Fragment(R.layout.add_fragment) {
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
