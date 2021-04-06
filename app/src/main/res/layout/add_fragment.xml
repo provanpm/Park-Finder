@@ -63,6 +63,7 @@
 
     <EditText
         android:id="@+id/parkDescriptionEditText"
+        android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
@@ -101,7 +102,7 @@
         app:layout_constraintTop_toBottomOf="@+id/parkNameTextView" />
 
     <ImageButton
-        android:id="@+id/backButton"
+        android:id="@+id/buttonBackAdd"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="14dp"
@@ -109,12 +110,13 @@
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:src="@drawable/abc_vector_test"
+        android:tint="#777777"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="?attr/actionModeCloseDrawable" />
 
     <Button
-        android:id="@+id/addParkImageButton"
+        android:id="@+id/buttonAddParkImage"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:layout_marginStart="14dp"
@@ -125,7 +127,7 @@
         app:layout_constraintTop_toBottomOf="@+id/parkDescriptionEditText" />
 
     <Button
-        android:id="@+id/finishParkAddButton"
+        android:id="@+id/buttonFinishAdd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
@@ -138,7 +140,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/parkCoverImageView"
         android:layout_width="175dp"
         android:layout_height="175dp"
         android:layout_marginTop="10dp"

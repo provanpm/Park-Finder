@@ -8,8 +8,10 @@ import edu.uc.app.parkfinder.R
 import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : Fragment(R.layout.home_fragment) {
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         searchButton.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
             findNavController().navigate(action)
