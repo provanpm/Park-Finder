@@ -18,8 +18,8 @@ class SearchFragment : Fragment(R.layout.search_fragment) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         viewModel.parks.observe(viewLifecycleOwner, Observer {
-                parks -> searchParkACT.setAdapter(ArrayAdapter(requireContext(), R.layout.support_simple_spinner_dropdown_item, parks))
-                searchParkACT.threshold = 1
+                parks -> searchParkACTV.setAdapter(ArrayAdapter(requireContext(), R.layout.support_simple_spinner_dropdown_item, parks))
+                searchParkACTV.threshold = 1
         })
         buttonSearch.setOnClickListener {
             val action = SearchFragmentDirections.actionSearchFragmentToSearchResultFragment()
