@@ -27,15 +27,6 @@ class SearchFragment : Fragment(R.layout.search_fragment) {
             val action = SearchFragmentDirections.actionSearchFragmentToSearchResultFragment()
             findNavController().navigate(action)
         }
-
-        buttonBackSearch.setOnClickListener {
-            val action = SearchFragmentDirections.actionSearchFragmentToHomeFragment()
-            findNavController().navigate(action)
-        }
-    }
-
-    companion object {
-        fun newInstance() = SearchFragment()
     }
 
 }

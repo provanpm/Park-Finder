@@ -17,11 +17,6 @@ class AddFragment : Fragment(R.layout.add_fragment) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        buttonBackAdd.setOnClickListener {
-            val action = AddFragmentDirections.actionAddFragmentToHomeFragment()
-            findNavController().navigate(action)
-        }
-
         buttonFinishAdd.setOnClickListener {
             savePark()
         }
@@ -34,10 +29,6 @@ class AddFragment : Fragment(R.layout.add_fragment) {
             description = parkDescriptionEditText.text.toString()
         }
         viewModel.save(park)
-    }
-
-    companion object {
-        fun newInstance() = AddFragment()
     }
 
 }

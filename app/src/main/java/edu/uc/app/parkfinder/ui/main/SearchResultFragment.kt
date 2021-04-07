@@ -12,8 +12,4 @@ class SearchResultFragment : Fragment(R.layout.search_result_fragment) {
 
     }
 
-    companion object {
-        fun newInstance() = SearchResultFragment()
-    }
-
 }

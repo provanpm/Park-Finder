@@ -3,24 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/add_fragment"
+    android:id="@+id/search_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.SearchFragment">
-
-    <ImageButton
-        android:id="@+id/buttonBackSearch"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="35dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        android:src="@drawable/abc_vector_test"
-        android:tint="#777777"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="?attr/actionModeCloseDrawable" />
 
     <TextView
         android:id="@+id/parkSearchTextView"
@@ -54,7 +40,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="90dp"
         android:text="Search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

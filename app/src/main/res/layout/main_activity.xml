@@ -3,31 +3,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity">
 
     <ImageButton
         android:id="@+id/buttonMenuHome"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginStart="57dp"
         android:layout_marginEnd="59dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="fitXY"
         android:tint="#8C8C8C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonMenuAdd"
-        app:layout_constraintStart_toEndOf="@+id/buttonSearchAdd"
+        app:layout_constraintStart_toEndOf="@+id/buttonMenuSearch"
         app:srcCompat="@drawable/home_5_128" />
 
     <ImageButton
         android:id="@+id/buttonMenuAdd"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="fitXY"
         android:tint="#939393"
@@ -36,11 +37,11 @@
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <ImageButton
-        android:id="@+id/buttonSearchAdd"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/buttonMenuSearch"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="50dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="fitXY"
         android:tint="#373737"
