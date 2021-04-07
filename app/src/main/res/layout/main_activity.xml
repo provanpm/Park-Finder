@@ -7,6 +7,47 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity">
 
+    <ImageButton
+        android:id="@+id/buttonMenuHome"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="14dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:tint="#8C8C8C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMenuAdd"
+        app:layout_constraintStart_toEndOf="@+id/buttonSearchAdd"
+        app:srcCompat="@drawable/home_5_128" />
+
+    <ImageButton
+        android:id="@+id/buttonMenuAdd"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="14dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:tint="#939393"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <ImageButton
+        android:id="@+id/buttonSearchAdd"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="14dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:tint="#373737"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_search" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -14,5 +55,15 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph" />
+
+    <View
+        android:id="@+id/menuDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="75dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
