@@ -1,8 +1,11 @@
-package edu.uc.app.parkfinder.ui.main
+package edu.uc.app.parkfinder.navigation
 
 import android.app.Activity
 import androidx.navigation.Navigation.findNavController
 import edu.uc.app.parkfinder.R
+import edu.uc.app.parkfinder.ui.main.AddFragmentDirections
+import edu.uc.app.parkfinder.ui.main.HomeFragmentDirections
+import edu.uc.app.parkfinder.ui.main.SearchFragmentDirections
 
 
 object NavActivity{

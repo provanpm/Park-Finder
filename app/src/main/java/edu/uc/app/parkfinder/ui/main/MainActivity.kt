@@ -3,12 +3,10 @@ package edu.uc.app.parkfinder.ui.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import edu.uc.app.parkfinder.R
+import edu.uc.app.parkfinder.navigation.NavActivity
 import kotlinx.android.synthetic.main.main_activity.*
 
 class MainActivity : AppCompatActivity() {
-
-    var currentFragment: String = "HomeFragment";
-    var intendedFragment: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
