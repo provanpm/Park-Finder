@@ -3,7 +3,7 @@ package edu.uc.app.parkfinder.ui.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import edu.uc.app.parkfinder.R
-import edu.uc.app.parkfinder.navigation.NavActivity
+import edu.uc.app.parkfinder.navigation.Navigator
 import kotlinx.android.synthetic.main.main_activity.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,15 +18,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonMenuSearch.setOnClickListener {
-            NavActivity.decideNav("SearchFragment", this)
+            Navigator.decideNav("SearchFragment", this)
         }
 
         buttonMenuAdd.setOnClickListener {
-            NavActivity.decideNav("AddFragment", this)
+            Navigator.decideNav("AddFragment", this)
         }
 
         buttonMenuHome.setOnClickListener {
-            NavActivity.decideNav("HomeFragment", this)
+            Navigator.decideNav("HomeFragment", this)
         }
     }
 
