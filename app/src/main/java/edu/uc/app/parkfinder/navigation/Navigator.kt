@@ -10,7 +10,7 @@ import edu.uc.app.parkfinder.ui.main.SearchFragmentDirections
 
 object Navigator{
 
-    var currentFragment: String = "HomeFragment";
+    var currentFragment: String = "HomeFragment"
 
     /*
      * This is dirty, I know that. There is probably a better way to pull
@@ -23,13 +23,13 @@ object Navigator{
             {
                 val action = HomeFragmentDirections.actionHomeFragmentToAddFragment()
                 findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = "AddFragment"
+                currentFragment = intendedFragment
             }
             if (intendedFragment == "SearchFragment")
             {
                 val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
                 findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = "SearchFragment"
+                currentFragment = intendedFragment
             }
         }
         if (currentFragment == "AddFragment")
@@ -38,13 +38,13 @@ object Navigator{
             {
                 val action = AddFragmentDirections.actionAddFragmentToHomeFragment()
                 findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = "HomeFragment"
+                currentFragment = intendedFragment
             }
             if (intendedFragment == "SearchFragment")
             {
                 val action = AddFragmentDirections.actionAddFragmentToSearchFragment()
                 findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = "SearchFragment"
+                currentFragment = intendedFragment
             }
         }
         if (currentFragment == "SearchFragment")
@@ -53,13 +53,13 @@ object Navigator{
             {
                 val action = SearchFragmentDirections.actionSearchFragmentToHomeFragment()
                 findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = "HomeFragment"
+                currentFragment = intendedFragment
             }
             if (intendedFragment == "AddFragment")
             {
                 val action = SearchFragmentDirections.actionSearchFragmentToAddFragment()
                 findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = "AddFragment"
+                currentFragment = intendedFragment
             }
         }
     }

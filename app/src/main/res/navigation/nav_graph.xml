@@ -30,11 +30,11 @@
     <fragment
         android:id="@+id/search_fragment"
         android:name="edu.uc.app.parkfinder.ui.main.SearchFragment"
-        android:label="main_fragment"
+        android:label="search_fragment"
         tools:layout="@layout/search_fragment" >
         <action
-            android:id="@+id/action_search_fragment_to_search_result_fragment"
-            app:destination="@id/search_result_fragment"
+            android:id="@+id/action_search_fragment_to_result_fragment"
+            app:destination="@id/result_fragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -56,10 +56,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/search_result_fragment"
-        android:name="edu.uc.app.parkfinder.ui.main.SearchResultFragment"
-        android:label="search_result_fragment"
-        tools:layout="@layout/search_result_fragment" />
+        android:id="@+id/result_fragment"
+        android:name="edu.uc.app.parkfinder.ui.main.ResultFragment"
+        android:label="result_fragment"
+        tools:layout="@layout/result_fragment" />
 
     <fragment
         android:id="@+id/add_fragment"

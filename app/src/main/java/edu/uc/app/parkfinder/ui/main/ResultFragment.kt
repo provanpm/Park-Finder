@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import edu.uc.app.parkfinder.R
 
-class SearchResultFragment : Fragment(R.layout.search_result_fragment) {
+class ResultFragment : Fragment(R.layout.result_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
