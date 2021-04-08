@@ -2,13 +2,13 @@ package edu.uc.app.parkfinder.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.Navigation.findNavController
 import edu.uc.app.parkfinder.R
 import kotlinx.android.synthetic.main.main_activity.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var currentFragment: String = "HomeFragment";
+    var currentFragment: String = "HomeFragment";
+    var intendedFragment: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,48 +20,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonMenuSearch.setOnClickListener {
-            if (currentFragment == "HomeFragment")
-            {
-                val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
-                findNavController(this, R.id.nav_host_fragment).navigate(action)
-                currentFragment = "SearchFragment"
-            }
-            else if (currentFragment == "AddFragment")
-            {
-                val action = AddFragmentDirections.actionAddFragmentToSearchFragment()
-                findNavController(this, R.id.nav_host_fragment).navigate(action)
-                currentFragment = "SearchFragment"
-            }
+            NavActivity.decideNav("SearchFragment", this)
         }
 
         buttonMenuAdd.setOnClickListener {
-            if (currentFragment == "HomeFragment")
-            {
-                val action = HomeFragmentDirections.actionHomeFragmentToAddFragment()
-                findNavController(this, R.id.nav_host_fragment).navigate(action)
-                currentFragment = "AddFragment"
-            }
-            else if (currentFragment == "SearchFragment")
-            {
-                val action = SearchFragmentDirections.actionSearchFragmentToAddFragment()
-                findNavController(this, R.id.nav_host_fragment).navigate(action)
-                currentFragment = "AddFragment"
-            }
+            NavActivity.decideNav("AddFragment", this)
         }
 
         buttonMenuHome.setOnClickListener {
-            if (currentFragment == "AddFragment")
-            {
-                val action = AddFragmentDirections.actionAddFragmentToHomeFragment()
-                findNavController(this, R.id.nav_host_fragment).navigate(action)
-                currentFragment = "HomeFragment"
-            }
-            else if (currentFragment == "SearchFragment")
-            {
-                val action = SearchFragmentDirections.actionSearchFragmentToHomeFragment()
-                findNavController(this, R.id.nav_host_fragment).navigate(action)
-                currentFragment = "HomeFragment"
-            }
+            NavActivity.decideNav("HomeFragment", this)
         }
     }
+
 }
