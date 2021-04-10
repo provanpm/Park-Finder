@@ -68,6 +68,7 @@ object Navigator {
             currentFragment = intendedFragment
             findNavController(mainActivity, R.id.nav_host_fragment).navigate(action as NavDirections)
         }
+        action = null;
     }
 
 }
