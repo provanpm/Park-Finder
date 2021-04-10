@@ -22,7 +22,7 @@ class AddFragment : Fragment(R.layout.add_fragment) {
             savePark()
         }
         buttonAddParkImage.setOnClickListener{
-            Navigator.decideNav("CameraFragment", this.getActivity() as Activity)
+            Navigator.decideNav("CameraFragment", this.activity as Activity)
         }
     }
 

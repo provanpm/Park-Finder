@@ -1,6 +1,7 @@
 package edu.uc.app.parkfinder.navigation
 
 import android.app.Activity
+import androidx.navigation.NavDirections
 import androidx.navigation.Navigation.findNavController
 import edu.uc.app.parkfinder.R
 import edu.uc.app.parkfinder.ui.main.AddFragmentDirections
@@ -9,9 +10,10 @@ import edu.uc.app.parkfinder.ui.main.HomeFragmentDirections
 import edu.uc.app.parkfinder.ui.main.SearchFragmentDirections
 
 
-object Navigator{
+object Navigator {
 
-    var currentFragment: String = "HomeFragment"
+    private var currentFragment: String = "HomeFragment"
+    private lateinit var action: NavDirections;
 
     /*
      * This is dirty, I know that. There is probably a better way to pull
@@ -23,15 +25,11 @@ object Navigator{
         {
             if (intendedFragment == "AddFragment")
             {
-                val action = HomeFragmentDirections.actionHomeFragmentToAddFragment()
-                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = intendedFragment
+                action = HomeFragmentDirections.actionHomeFragmentToAddFragment()
             }
             if (intendedFragment == "SearchFragment")
             {
-                val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
-                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = intendedFragment
+                action = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
             }
         }
 
@@ -39,21 +37,15 @@ object Navigator{
         {
             if (intendedFragment == "HomeFragment")
             {
-                val action = AddFragmentDirections.actionAddFragmentToHomeFragment()
-                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = intendedFragment
+                action = AddFragmentDirections.actionAddFragmentToHomeFragment()
             }
             if (intendedFragment == "SearchFragment")
             {
-                val action = AddFragmentDirections.actionAddFragmentToSearchFragment()
-                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = intendedFragment
+                action = AddFragmentDirections.actionAddFragmentToSearchFragment()
             }
             if (intendedFragment == "CameraFragment")
             {
-                val action = AddFragmentDirections.actionAddFragmentToCameraFragment()
-                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = intendedFragment
+                action = AddFragmentDirections.actionAddFragmentToCameraFragment()
             }
         }
 
@@ -61,15 +53,11 @@ object Navigator{
         {
             if (intendedFragment == "HomeFragment")
             {
-                val action = SearchFragmentDirections.actionSearchFragmentToHomeFragment()
-                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = intendedFragment
+                action = SearchFragmentDirections.actionSearchFragmentToHomeFragment()
             }
             if (intendedFragment == "AddFragment")
             {
-                val action = SearchFragmentDirections.actionSearchFragmentToAddFragment()
-                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = intendedFragment
+                action = SearchFragmentDirections.actionSearchFragmentToAddFragment()
             }
         }
 
@@ -77,23 +65,20 @@ object Navigator{
         {
             if (intendedFragment == "AddFragment")
             {
-                val action = CameraFragmentDirections.actionCameraFragmentToAddFragment()
-                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = intendedFragment
+                action = CameraFragmentDirections.actionCameraFragmentToAddFragment()
             }
             if (intendedFragment == "HomeFragment")
             {
-                val action = CameraFragmentDirections.actionCameraFragmentToHomeFragment()
-                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = intendedFragment
+                action = CameraFragmentDirections.actionCameraFragmentToHomeFragment()
             }
             if (intendedFragment == "SearchFragment")
             {
-                val action = CameraFragmentDirections.actionCameraFragmentToSearchFragment()
-                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
-                currentFragment = intendedFragment
+                action = CameraFragmentDirections.actionCameraFragmentToSearchFragment()
             }
         }
+
+        findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
+        currentFragment = intendedFragment
     }
 
 }
