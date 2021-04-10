@@ -1,14 +1,10 @@
 package edu.uc.app.parkfinder.ui.main
 
-import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat
 import edu.uc.app.parkfinder.R
 import edu.uc.app.parkfinder.navigation.Navigator
 import kotlinx.android.synthetic.main.main_activity.*
-import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
 

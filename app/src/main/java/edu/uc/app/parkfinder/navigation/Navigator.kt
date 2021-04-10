@@ -4,6 +4,7 @@ import android.app.Activity
 import androidx.navigation.Navigation.findNavController
 import edu.uc.app.parkfinder.R
 import edu.uc.app.parkfinder.ui.main.AddFragmentDirections
+import edu.uc.app.parkfinder.ui.main.CameraFragmentDirections
 import edu.uc.app.parkfinder.ui.main.HomeFragmentDirections
 import edu.uc.app.parkfinder.ui.main.SearchFragmentDirections
 
@@ -17,6 +18,7 @@ object Navigator{
      * this sort of thing off but I wasn't aware. Sorry!
      */
     fun decideNav(intendedFragment: String, mainActivity: Activity) {
+
         if (currentFragment == "HomeFragment")
         {
             if (intendedFragment == "AddFragment")
@@ -32,7 +34,8 @@ object Navigator{
                 currentFragment = intendedFragment
             }
         }
-        if (currentFragment == "AddFragment")
+
+        else if (currentFragment == "AddFragment")
         {
             if (intendedFragment == "HomeFragment")
             {
@@ -46,8 +49,15 @@ object Navigator{
                 findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
                 currentFragment = intendedFragment
             }
+            if (intendedFragment == "CameraFragment")
+            {
+                val action = AddFragmentDirections.actionAddFragmentToCameraFragment()
+                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
+                currentFragment = intendedFragment
+            }
         }
-        if (currentFragment == "SearchFragment")
+
+        else if (currentFragment == "SearchFragment")
         {
             if (intendedFragment == "HomeFragment")
             {
@@ -58,6 +68,16 @@ object Navigator{
             if (intendedFragment == "AddFragment")
             {
                 val action = SearchFragmentDirections.actionSearchFragmentToAddFragment()
+                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
+                currentFragment = intendedFragment
+            }
+        }
+
+        else if (currentFragment == "CameraFragment")
+        {
+            if (intendedFragment == "AddFragment")
+            {
+                val action = CameraFragmentDirections.actionCameraFragmentToAddFragment()
                 findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
                 currentFragment = intendedFragment
             }
