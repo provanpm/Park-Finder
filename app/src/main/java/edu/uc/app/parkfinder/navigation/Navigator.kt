@@ -10,9 +10,9 @@ import edu.uc.app.parkfinder.ui.main.HomeFragmentDirections
 import edu.uc.app.parkfinder.ui.main.SearchFragmentDirections
 
 
-object Navigator{
+object Navigator {
 
-    var currentFragment: String = "HomeFragment"
+    private var currentFragment: String = "HomeFragment"
     private lateinit var action: NavDirections;
 
     /*
