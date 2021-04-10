@@ -22,8 +22,8 @@ import java.util.*
 class CameraFragment : Fragment (R.layout.camera_fragment){
     private val SAVE_IMAGE_REQUEST_CODE = 1999
     private val CAMERA_REQUEST_CODE: Int = 1998
-    val CAMERA_PERMISSION_REQUEST_CODE = 1997
-    private lateinit var currentPicturePath:String
+    private val CAMERA_PERMISSION_REQUEST_CODE = 1997
+    private lateinit var currentPicturePath : String
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -33,12 +33,10 @@ class CameraFragment : Fragment (R.layout.camera_fragment){
     }
 
     private fun prepTakePhoto() {
-        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED)
-        {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
             takePhoto()
         }
-        else
-        {
+        else {
             val permissionRequest = arrayOf(Manifest.permission.CAMERA)
             requestPermissions(permissionRequest, CAMERA_PERMISSION_REQUEST_CODE)
 
@@ -50,8 +48,7 @@ class CameraFragment : Fragment (R.layout.camera_fragment){
         permissions: Array<out String>,
         grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-            when(requestCode)
-            {
+            when(requestCode) {
                 CAMERA_PERMISSION_REQUEST_CODE -> {
                     if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                         takePhoto()
@@ -67,12 +64,10 @@ class CameraFragment : Fragment (R.layout.camera_fragment){
     private fun takePhoto() {
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also{
             takePictureIntent -> takePictureIntent.resolveActivity(requireContext().packageManager)?.also{
-            if(takePictureIntent == null)
-            {
+            if(takePictureIntent == null) {
                 Toast.makeText(context, "Unable to save Photo", Toast.LENGTH_LONG).show()
             }
-            else
-            {
+            else {
                 val photoFile:File = createImageFile()
                 photoFile?.also{
                     val photoURI = FileProvider.getUriForFile(requireActivity().applicationContext, "com.parkFinder.android.fileprovider", it )
@@ -87,12 +82,12 @@ class CameraFragment : Fragment (R.layout.camera_fragment){
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode == RESULT_OK){
-            if(requestCode == CAMERA_REQUEST_CODE)
-            {
+        if(resultCode == RESULT_OK) {
+            if(requestCode == CAMERA_REQUEST_CODE) {
                 val imageBitmap = data!!.extras!!.get("data") as Bitmap
                 imgPark.setImageBitmap(imageBitmap)
-            } else if (requestCode == SAVE_IMAGE_REQUEST_CODE){
+            }
+            else if (requestCode == SAVE_IMAGE_REQUEST_CODE) {
                 Toast.makeText(context, "Image Saved", Toast.LENGTH_LONG).show()
             }
         }
