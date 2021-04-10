@@ -21,8 +21,7 @@ object Navigator {
      */
     fun decideNav(intendedFragment: String, mainActivity: Activity) {
 
-        if (currentFragment == "HomeFragment")
-        {
+        if (currentFragment == "HomeFragment") {
             if (intendedFragment == "AddFragment") {
                 action = HomeFragmentDirections.actionHomeFragmentToAddFragment()
             }
