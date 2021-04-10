@@ -20,6 +20,9 @@ class AddFragment : Fragment(R.layout.add_fragment) {
         buttonFinishAdd.setOnClickListener {
             savePark()
         }
+        buttonAddParkImage.setOnClickListener{
+            addImage()
+        }
     }
 
     private fun savePark() {
@@ -29,6 +32,10 @@ class AddFragment : Fragment(R.layout.add_fragment) {
             description = parkDescriptionEditText.text.toString()
         }
         viewModel.save(park)
+    }
+
+    private  fun addImage(){
+
     }
 
 }

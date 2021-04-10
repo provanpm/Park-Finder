@@ -65,7 +65,11 @@
         android:id="@+id/add_fragment"
         android:name="edu.uc.app.parkfinder.ui.main.AddFragment"
         android:label="add_fragment"
-        tools:layout="@layout/add_fragment" />
+        tools:layout="@layout/add_fragment" >
+        <action
+            android:id="@+id/action_add_fragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+    </fragment>
         <action
             android:id="@+id/action_add_fragment_to_home_fragment"
             app:destination="@id/home_fragment"
@@ -80,4 +84,8 @@
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="edu.uc.app.parkfinder.ui.main.CameraFragment"
+        android:label="CameraFragment" />
 </navigation>
