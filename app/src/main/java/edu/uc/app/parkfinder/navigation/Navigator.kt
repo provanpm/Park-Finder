@@ -81,6 +81,18 @@ object Navigator{
                 findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
                 currentFragment = intendedFragment
             }
+            if (intendedFragment == "HomeFragment")
+            {
+                val action = CameraFragmentDirections.actionCameraFragmentToHomeFragment()
+                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
+                currentFragment = intendedFragment
+            }
+            if (intendedFragment == "SearchFragment")
+            {
+                val action = CameraFragmentDirections.actionCameraFragmentToSearchFragment()
+                findNavController(mainActivity, R.id.nav_host_fragment).navigate(action)
+                currentFragment = intendedFragment
+            }
         }
     }
 
