@@ -21,6 +21,7 @@ class AddFragment : Fragment(R.layout.add_fragment) {
         buttonFinishAdd.setOnClickListener {
             savePark()
         }
+
         buttonAddParkImage.setOnClickListener{
             Navigator.decideNav("CameraFragment", this.activity as Activity)
         }
@@ -28,15 +29,12 @@ class AddFragment : Fragment(R.layout.add_fragment) {
 
     private fun savePark() {
         var park = Park().apply {
-            name = parkNameEditText.text.toString()
-            address = parkAddressEditText.text.toString()
-            description = parkDescriptionEditText.text.toString()
+            name = editTextParkName.text.toString()
+            address = editTextParkAddress.text.toString()
+            description = editTextParkDesc.text.toString()
         }
         viewModel.save(park)
-    }
-
-    private  fun addImage(){
-
+        Navigator.decideNav("HomeFragment", this.activity as Activity)
     }
 
 }

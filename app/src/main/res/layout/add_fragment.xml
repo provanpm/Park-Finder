@@ -9,9 +9,10 @@
     tools:context=".ui.main.AddFragment">
 
     <TextView
-        android:id="@+id/parkAddTextView"
+        android:id="@+id/viewTextParkAdd"
         android:layout_width="0dp"
         android:layout_height="55dp"
+        android:layout_marginTop="15dp"
         android:text="Add New Park"
         android:textAlignment="center"
         android:textSize="36sp"
@@ -20,45 +21,42 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/parkNameTextView"
+        android:id="@+id/viewTextParkName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
         android:text="Park Name:"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parkAddTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/viewTextParkAdd" />
 
     <TextView
-        android:id="@+id/parkAddressTextView"
+        android:id="@+id/viewTextParkAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="14dp"
         android:text="Park Address:"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parkNameEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextParkName" />
 
     <TextView
-        android:id="@+id/parkDescriptionTextView"
+        android:id="@+id/viewTextParkDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="14dp"
         android:text="Park Description:"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parkAddressEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextParkAddress" />
 
     <EditText
-        android:id="@+id/parkDescriptionEditText"
+        android:id="@+id/editTextParkDesc"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="75dp"
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
         android:ems="10"
@@ -67,10 +65,10 @@
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parkDescriptionTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/viewTextParkDesc" />
 
     <EditText
-        android:id="@+id/parkAddressEditText"
+        android:id="@+id/editTextParkAddress"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="14dp"
@@ -80,10 +78,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parkAddressTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/viewTextParkAddress" />
 
     <EditText
-        android:id="@+id/parkNameEditText"
+        android:id="@+id/editTextParkName"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="14dp"
@@ -93,19 +91,18 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parkNameTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/viewTextParkName" />
 
     <Button
         android:id="@+id/buttonAddParkImage"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:text="Add Cover Image"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:text="Add Image"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parkDescriptionEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextParkDesc" />
 
     <Button
         android:id="@+id/buttonFinishAdd"
@@ -118,16 +115,18 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parkCoverImageView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/parkCoverImageView"
+        android:id="@+id/imageViewParkCover"
         android:layout_width="0dp"
-        android:layout_height="174dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonFinishAdd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAddParkImage"
+        app:layout_constraintStart_toEndOf="@+id/buttonAddParkImage"
+        app:layout_constraintTop_toBottomOf="@+id/editTextParkDesc"
         tools:src="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

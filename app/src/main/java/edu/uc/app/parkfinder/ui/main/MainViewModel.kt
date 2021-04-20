@@ -12,22 +12,32 @@ import edu.uc.app.parkfinder.service.ParkService
 class MainViewModel : ViewModel() {
 
     // uses Retrofit & uses GitHub JSON
-    var parks: MutableLiveData<ArrayList<Park>> = MutableLiveData<ArrayList<Park>>()
+    var staticParks: MutableLiveData<ArrayList<Park>> = MutableLiveData<ArrayList<Park>>()
 
     // uses Firebase & Firestore
-    var allParks: MutableLiveData<ArrayList<Park>> = MutableLiveData<ArrayList<Park>>()
+    private var _parks = MutableLiveData<List<Park>>()
 
     private var parkService: ParkService = ParkService()
     private lateinit var firestore : FirebaseFirestore
 
     init {
-        fetchParks()
         firestore = FirebaseFirestore.getInstance()
         firestore.firestoreSettings = FirebaseFirestoreSettings.Builder().build()
+        listenToParks()
+        fetchParks()
+        fetchStaticParks()
     }
 
-    fun fetchParks() {
-        parks = parkService.fetchParks()
+    internal fun fetchStaticParks() {
+        staticParks = parkService.fetchParks()
+    }
+
+    internal fun fetchParks() {
+        var parksCollection = firestore.collection("parks")
+        parksCollection.addSnapshotListener {querySnapshot, firebaseFirestoreException ->
+            var innerParks = querySnapshot?.toObjects(Park::class.java)
+            _parks.postValue(innerParks!!)
+        }
     }
 
     /*
@@ -42,12 +52,16 @@ class MainViewModel : ViewModel() {
             }
 
             if (snapshot != null) {
-                val allParksTemp = ArrayList<Park>()
+                val parksTemp = ArrayList<Park>()
                 val documents = snapshot.documents
                 documents.forEach {
-                    it.toObject(Park::class.java)
+                    val park = it.toObject(Park::class.java)
+                    if (park != null)
+                    {
+                        parksTemp.add(park!!)
+                    }
                 }
-                allParks.value = allParksTemp
+                parks.value = parksTemp
             }
         }
     }
@@ -63,4 +77,9 @@ class MainViewModel : ViewModel() {
                 Log.e("Firebase", "save failed")
             }
     }
+
+    internal var parks : MutableLiveData<List<Park>>
+        get() {return _parks}
+        set(value) {_parks = value}
+
 }

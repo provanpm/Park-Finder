@@ -9,14 +9,25 @@
     tools:context=".ui.main.HomeFragment">
 
     <TextView
-        android:id="@+id/parkFinderTextView"
+        android:id="@+id/textViewAllParks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="15dp"
         android:text="All Parks"
         android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAllParks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
