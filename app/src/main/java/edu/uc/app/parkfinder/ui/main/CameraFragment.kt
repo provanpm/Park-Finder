@@ -71,7 +71,7 @@ class CameraFragment : Fragment (R.layout.camera_fragment){
                 val photoFile:File = createImageFile()
                 photoFile?.also{
                     val photoURI = FileProvider.getUriForFile(requireActivity().applicationContext, "com.parkFinder.android.fileprovider", it )
-                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoFile)
+                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
                     startActivityForResult(takePictureIntent, SAVE_IMAGE_REQUEST_CODE)
                 }
             }
