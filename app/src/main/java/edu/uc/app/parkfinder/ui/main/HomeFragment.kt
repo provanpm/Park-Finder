@@ -121,18 +121,13 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
             textViewRowParkName.text = park.name
             textViewRowParkAddress.text = park.address
 
-            /*
-
-            // Hosting data costs me money now, so test this sparingly until it is complete.
-
-            var imgRef = storageRef.child("parks/image10.jpeg")
+            var imgRef = storageRef.child("parks/" + park.parkID + ".jpeg")
             val FOUR_MEGABYTE: Long = 1024 * 1024 * 4
             imgRef.getBytes(FOUR_MEGABYTE).addOnSuccessListener {
                 val bmp = BitmapFactory.decodeByteArray(it, 0, it.size);
                 imageViewRowCover.setImageBitmap(bmp);
                 textViewCoverLoading.text = ""
             }
-             */
         }
     }
 

@@ -26,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="14dp"
         android:text="Park Description:"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="14dp"
         android:text="Park Address:"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,6 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
         android:text="Park Name:"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,8 +106,9 @@
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginBottom="25dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonFinishView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -119,7 +123,7 @@
             <ImageView
                 android:id="@+id/imageViewTemplate"
                 android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />
 
