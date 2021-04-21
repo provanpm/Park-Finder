@@ -15,6 +15,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.widget.Toast
 import androidx.core.content.FileProvider
+import edu.uc.app.parkfinder.navigation.Navigator
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -26,6 +27,7 @@ class CameraFragment : Fragment (R.layout.camera_fragment){
     private lateinit var currentPicturePath : String
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Navigator.currentFragment = "CameraFragment"
 
         takePhotoBtn.setOnClickListener {
             prepTakePhoto()

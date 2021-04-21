@@ -17,6 +17,7 @@ class AddFragment : Fragment(R.layout.add_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        Navigator.currentFragment = "AddFragment"
 
         buttonFinishAdd.setOnClickListener {
             savePark()
@@ -24,6 +25,10 @@ class AddFragment : Fragment(R.layout.add_fragment) {
 
         buttonAddParkImage.setOnClickListener{
             Navigator.decideNav("CameraFragment", this.activity as Activity)
+        }
+
+        buttonChooseParkImage.setOnClickListener{
+            Navigator.decideNav("ChooseFragment", this.activity as Activity)
         }
     }
 
