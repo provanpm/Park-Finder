@@ -59,13 +59,35 @@
         android:id="@+id/result_fragment"
         android:name="edu.uc.app.parkfinder.ui.main.ResultFragment"
         android:label="result_fragment"
-        tools:layout="@layout/result_fragment" />
+        tools:layout="@layout/result_fragment" >
+        <action
+            android:id="@+id/action_result_fragment_to_search_fragment"
+            app:destination="@id/search_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_result_fragment_to_home_fragment"
+            app:destination="@id/home_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_result_fragment_to_add_fragment"
+            app:destination="@id/add_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
     <fragment
         android:id="@+id/camera_fragment"
         android:name="edu.uc.app.parkfinder.ui.main.CameraFragment"
         android:label="camera_fragment"
-        tools:layout="@layout/camera_fragment" />
+        tools:layout="@layout/camera_fragment" >
         <action
             android:id="@+id/action_camera_fragment_to_add_fragment"
             app:destination="@id/add_fragment"
@@ -87,12 +109,13 @@
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
 
     <fragment
         android:id="@+id/choose_fragment"
         android:name="edu.uc.app.parkfinder.ui.main.ChooseFragment"
         android:label="choose_fragment"
-        tools:layout="@layout/choose_fragment" />
+        tools:layout="@layout/choose_fragment" >
     <action
         android:id="@+id/action_choose_fragment_to_add_fragment"
         app:destination="@id/add_fragment"
@@ -114,6 +137,7 @@
         app:exitAnim="@anim/slide_out_right"
         app:popEnterAnim="@anim/slide_in_right"
         app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
 
     <fragment
         android:id="@+id/add_fragment"

@@ -1,5 +1,6 @@
 package edu.uc.app.parkfinder.ui.main
 
+import android.app.Activity
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -26,8 +27,7 @@ class SearchFragment : Fragment(R.layout.search_fragment) {
         })
 
         buttonParkSearch.setOnClickListener {
-            val action = SearchFragmentDirections.actionSearchFragmentToResultFragment()
-            findNavController().navigate(action)
+            Navigator.decideNav("ResultFragment", this.activity as Activity)
         }
     }
 

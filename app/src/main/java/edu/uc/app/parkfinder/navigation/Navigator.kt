@@ -49,6 +49,21 @@ object Navigator {
             else if (intendedFragment == "AddFragment") {
                 action = SearchFragmentDirections.actionSearchFragmentToAddFragment()
             }
+            else if (intendedFragment == "ResultFragment") {
+                action = SearchFragmentDirections.actionSearchFragmentToResultFragment()
+            }
+        }
+
+        else if (currentFragment == "ResultFragment") {
+            if (intendedFragment == "HomeFragment") {
+                action = ResultFragmentDirections.actionResultFragmentToHomeFragment()
+            }
+            else if (intendedFragment == "AddFragment") {
+                action = ResultFragmentDirections.actionResultFragmentToAddFragment()
+            }
+            else if (intendedFragment == "SearchFragment") {
+                action = ResultFragmentDirections.actionResultFragmentToSearchFragment()
+            }
         }
 
         else if (currentFragment == "CameraFragment") {
