@@ -8,30 +8,27 @@
 
     <TextView
         android:id="@+id/textViewChoosePhoto"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Take Photo"
+        android:layout_marginTop="15dp"
+        android:text="Choose Photo"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/takePhotoBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Capture"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewChoosePhoto" />
-
-    <ImageView
-        android:id="@+id/imgPark"
-        android:layout_width="407dp"
-        android:layout_height="478dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAllCovers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

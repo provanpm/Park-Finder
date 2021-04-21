@@ -8,6 +8,7 @@ import android.widget.*
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import edu.uc.app.parkfinder.R
+import edu.uc.app.parkfinder.navigation.Navigator
 import kotlinx.android.synthetic.main.search_fragment.*
 
 class SearchFragment : Fragment(R.layout.search_fragment) {
@@ -17,6 +18,7 @@ class SearchFragment : Fragment(R.layout.search_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        Navigator.currentFragment = "SearchFragment"
 
         viewModel.staticParks.observe(viewLifecycleOwner, Observer {
                 parks -> autocompleteParkSearch.setAdapter(ArrayAdapter(requireContext(), R.layout.support_simple_spinner_dropdown_item, parks))

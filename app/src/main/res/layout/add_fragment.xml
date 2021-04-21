@@ -92,14 +92,24 @@
 
     <Button
         android:id="@+id/buttonAddParkImage"
-        android:layout_width="0dp"
+        android:layout_width="140dp"
         android:layout_height="40dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="8dp"
-        android:text="Add Image"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Take Photo"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextParkDesc" />
+
+    <Button
+        android:id="@+id/buttonChooseParkImage"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:text="Choose Image"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/buttonAddParkImage"
+        app:layout_constraintTop_toBottomOf="@+id/viewTextOrChoice" />
 
     <Button
         android:id="@+id/buttonFinishAdd"
@@ -118,13 +128,26 @@
         android:id="@+id/imageViewParkCover"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="6dp"
         android:layout_marginTop="14dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="14dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonFinishAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonAddParkImage"
         app:layout_constraintTop_toBottomOf="@+id/editTextParkDesc"
         tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/viewTextOrChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="- or -"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/buttonAddParkImage"
+        app:layout_constraintStart_toStartOf="@+id/buttonAddParkImage"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddParkImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

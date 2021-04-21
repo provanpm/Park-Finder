@@ -1,5 +1,6 @@
 package edu.uc.app.parkfinder.ui.main
 
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,43 +9,48 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.tasks.Task
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ListResult
+import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import edu.uc.app.parkfinder.R
-import edu.uc.app.parkfinder.dto.Park
 import edu.uc.app.parkfinder.navigation.Navigator
-import kotlinx.android.synthetic.main.home_fragment.*
+import kotlinx.android.synthetic.main.choose_fragment.*
 
-class HomeFragment : Fragment(R.layout.home_fragment) {
+class ChooseFragment : Fragment (R.layout.choose_fragment){
 
     private lateinit var viewModel: MainViewModel
-    private var _parks = ArrayList<Park>()
-    val storageRef = Firebase.storage.reference
+    private var _imageRefs = ArrayList<StorageReference>()
+    val storageRef = Firebase.storage.reference.child("parks")
+    private val FOUR_MEGABYTE: Long = 1024 * 1024 * 4 // max file size
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        Navigator.currentFragment = "HomeFragment"
+        Navigator.currentFragment = "ChooseFragment"
+        _imageRefs.clear()
 
-        recyclerViewAllPhotos.hasFixedSize()
-        recyclerViewAllPhotos.layoutManager = LinearLayoutManager(context)
-        recyclerViewAllPhotos.itemAnimator = DefaultItemAnimator()
-        recyclerViewAllPhotos.adapter = ParksAdapter(_parks, R.layout.row_layout)
+        recyclerViewAllCovers.hasFixedSize()
+        recyclerViewAllCovers.layoutManager = LinearLayoutManager(context)
+        recyclerViewAllCovers.itemAnimator = DefaultItemAnimator()
+        recyclerViewAllCovers.adapter = ParksAdapter(_imageRefs, R.layout.image_layout)
 
-        viewModel.parks.observe(viewLifecycleOwner, Observer {
-                parks ->
-            _parks.removeAll(_parks)
-            _parks.addAll(parks)
-            recyclerViewAllPhotos.adapter!!.notifyDataSetChanged()
-        })
+        val listAllTask: Task<ListResult> = storageRef.listAll()
+        listAllTask.addOnCompleteListener { result ->
+            val items: List<StorageReference> = result.result!!.items
+            items.forEachIndexed { index, item ->
+                _imageRefs.add(item)
+            }
+            recyclerViewAllCovers.adapter!!.notifyDataSetChanged()
+        }
     }
 
-    inner class ParksAdapter(val parks: List<Park>, val itemLayout: Int) : RecyclerView.Adapter<HomeFragment.ParkViewHolder>() {
+    inner class ParksAdapter(val imageRefs: List<StorageReference>, val itemLayout: Int) : RecyclerView.Adapter<ChooseFragment.ParkViewHolder>() {
         /**
          * Called when RecyclerView needs a new [ViewHolder] of the given type to represent
          * an item.
@@ -95,8 +101,7 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
          * @param position The position of the item within the adapter's data set.
          */
         override fun onBindViewHolder(holder: ParkViewHolder, position: Int) {
-            val park = parks[position]
-            holder.updatePark(park)
+            holder.updateImage(imageRefs[position])
         }
 
         /**
@@ -105,39 +110,27 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
          * @return The total number of items in this adapter.
          */
         override fun getItemCount(): Int {
-            return parks.size
+            return imageRefs.size
         }
 
     }
 
     inner class ParkViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        private var textViewCoverLoading : TextView = itemView.findViewById(R.id.textViewCoverLoading)
-        private var imageViewRowCover : ImageView = itemView.findViewById(R.id.imageViewCover)
-        private var textViewRowParkName : TextView = itemView.findViewById(R.id.textViewRowParkName)
-        private var textViewRowParkAddress : TextView = itemView.findViewById(R.id.textViewRowParkAddress)
+        private var textViewImageLoading : TextView = itemView.findViewById(R.id.textViewImageLoading)
+        private var imageViewCover : ImageView = itemView.findViewById(R.id.imageViewCover)
 
-        fun updatePark (park : Park)
+        fun updateImage (newRef: StorageReference)
         {
-            textViewRowParkName.text = park.name
-            textViewRowParkAddress.text = park.address
-
-            /*
-
-            // Hosting data costs me money now, so test this sparingly until it is complete.
-
-            var imgRef = storageRef.child("parks/image10.jpeg")
-            val FOUR_MEGABYTE: Long = 1024 * 1024 * 4
-            imgRef.getBytes(FOUR_MEGABYTE).addOnSuccessListener {
-                val bmp = BitmapFactory.decodeByteArray(it, 0, it.size);
-                imageViewRowCover.setImageBitmap(bmp);
-                textViewCoverLoading.text = ""
+            newRef.getBytes(FOUR_MEGABYTE).addOnSuccessListener {
+                var bmp = BitmapFactory.decodeByteArray(it, 0, it.size);
+                imageViewCover.setImageBitmap(bmp);
+                textViewImageLoading.text = ""
             }
-             */
         }
     }
 
     companion object {
-        fun newInstance() = HomeFragment()
+        fun newInstance() = ChooseFragment()
     }
 
 }

@@ -4,16 +4,13 @@ import android.app.Activity
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation.findNavController
 import edu.uc.app.parkfinder.R
-import edu.uc.app.parkfinder.ui.main.AddFragmentDirections
-import edu.uc.app.parkfinder.ui.main.CameraFragmentDirections
-import edu.uc.app.parkfinder.ui.main.HomeFragmentDirections
-import edu.uc.app.parkfinder.ui.main.SearchFragmentDirections
+import edu.uc.app.parkfinder.ui.main.*
 
 
 object Navigator {
 
-    private var currentFragment: String = "HomeFragment"
-    private var action: NavDirections? = null
+    var currentFragment: String = "HomeFragment"
+    var action: NavDirections? = null
 
     /*
      * This is dirty, I know that. There is probably a better way to pull
@@ -40,6 +37,9 @@ object Navigator {
             else if (intendedFragment == "CameraFragment") {
                 action = AddFragmentDirections.actionAddFragmentToCameraFragment()
             }
+            else if (intendedFragment == "ChooseFragment") {
+                action = AddFragmentDirections.actionAddFragmentToChooseFragment()
+            }
         }
 
         else if (currentFragment == "SearchFragment") {
@@ -60,6 +60,18 @@ object Navigator {
             }
             else if (intendedFragment == "SearchFragment") {
                 action = CameraFragmentDirections.actionCameraFragmentToSearchFragment()
+            }
+        }
+
+        else if (currentFragment == "ChooseFragment") {
+            if (intendedFragment == "AddFragment") {
+                action = ChooseFragmentDirections.actionChooseFragmentToAddFragment()
+            }
+            else if (intendedFragment == "HomeFragment") {
+                action = ChooseFragmentDirections.actionChooseFragmentToHomeFragment()
+            }
+            else if (intendedFragment == "SearchFragment") {
+                action = ChooseFragmentDirections.actionChooseFragmentToSearchFragment()
             }
         }
 
