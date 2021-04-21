@@ -24,6 +24,7 @@ class CameraFragment : Fragment (R.layout.camera_fragment){
     private val SAVE_IMAGE_REQUEST_CODE = 1999
     private val CAMERA_REQUEST_CODE: Int = 1998
     private val CAMERA_PERMISSION_REQUEST_CODE = 1997
+
     private lateinit var currentPicturePath : String
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,14 +42,14 @@ class CameraFragment : Fragment (R.layout.camera_fragment){
         else {
             val permissionRequest = arrayOf(Manifest.permission.CAMERA)
             requestPermissions(permissionRequest, CAMERA_PERMISSION_REQUEST_CODE)
-
         }
     }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
-        grantResults: IntArray) {
+        grantResults: IntArray)
+    {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
             when(requestCode) {
                 CAMERA_PERMISSION_REQUEST_CODE -> {
@@ -61,30 +62,34 @@ class CameraFragment : Fragment (R.layout.camera_fragment){
                     }
                 }
             }
-        }
+    }
 
-    private fun takePhoto() {
+    private fun takePhoto()
+    {
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also{
             takePictureIntent -> takePictureIntent.resolveActivity(requireContext().packageManager)?.also{
             if(takePictureIntent == null) {
                 Toast.makeText(context, "Unable to save Photo", Toast.LENGTH_LONG).show()
             }
-            else {
+            else
+            {
                 val photoFile:File = createImageFile()
                 photoFile?.also{
                     val photoURI = FileProvider.getUriForFile(requireActivity().applicationContext, "com.parkFinder.android.fileprovider", it )
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
                     startActivityForResult(takePictureIntent, SAVE_IMAGE_REQUEST_CODE)
+
                 }
             }
-            //    startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE) Keep This for Debugging
             }
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
+    {
         super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode == RESULT_OK) {
+        if(resultCode == RESULT_OK)
+        {
             if(requestCode == CAMERA_REQUEST_CODE) {
                 val imageBitmap = data!!.extras!!.get("data") as Bitmap
                 imgPark.setImageBitmap(imageBitmap)
